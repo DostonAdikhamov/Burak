@@ -1,9 +1,24 @@
-console.log("TASK H");
-function positiveToString(arr: number[]) {
-  const positiveNumbers: number[] = arr.filter((num: number) => num > 0);
-  return positiveNumbers.join(",");
+console.log("TASK H2");
+function ajratuvchiNatsist (str: string): string {
+  let javob = "";
+  for (const i of str) {
+    if ( i >= "0" && i <= "9" ) javob += i;
+  }
+  return javob;
 }
-console.log(positiveToString([10, -4, 0, 23, -9, 5]));
+
+console.log(ajratuvchiNatsist("m1i41i4mt"));
+console.log(ajratuvchiNatsist("MIT 31"));
+console.log(ajratuvchiNatsist("Tugadi"));
+
+
+
+// console.log("TASK H");
+// function positiveToString(arr: number[]) {
+//   const positiveNumbers: number[] = arr.filter((num: number) => num > 0);
+//   return positiveNumbers.join(",");
+// }
+// console.log(positiveToString([10, -4, 0, 23, -9, 5]));
 
 // console.log("Task G")
 // function yuqoriIndex(arr: number[]) {
