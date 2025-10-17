@@ -1,15 +1,27 @@
-console.log("TASK H2");
-function ajratuvchiNatsist (str: string): string {
-  let javob = "";
-  for (const i of str) {
-    if ( i >= "0" && i <= "9" ) javob += i;
-  }
-  return javob;
-}
+/** Project Standarts
+   - Logging standarts
+   - Naming Standarts
+      function, method, variable => CAMEL goHome
+      class => PASCAL                     
+      folder => KEBAB
+      css => SNAKE
+   - Error handling
+   
+ **/
 
-console.log(ajratuvchiNatsist("m1i41i4mt"));
-console.log(ajratuvchiNatsist("MIT 31"));
-console.log(ajratuvchiNatsist("Tugadi"));
+
+// console.log("TASK H2");
+// function ajratuvchiNatsist (str: string): string {
+//   let javob = "";
+//   for (const i of str) {
+//     if ( i >= "0" && i <= "9" ) javob += i;
+//   }
+//   return javob;
+// }
+
+// console.log(ajratuvchiNatsist("m1i41i4mt"));
+// console.log(ajratuvchiNatsist("MIT 31"));
+// console.log(ajratuvchiNatsist("Tugadi"));
 
 
 
