@@ -6,6 +6,7 @@ const restaurantController: T = {};
 restaurantController.goHome = (req: Request, res: Response) => {
     try {
       res.send("Admin Home Page");
+      //send | json | redirect | end | rebder
     } catch (err) {
     console.log("Error, goHome:", err);
     }
