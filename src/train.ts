@@ -1,3 +1,25 @@
+console.log("Task I");
+function majorityElement(arr: number[]): number {
+  let max = 0;
+  let javob = arr[0];
+
+  for (let i = 0; i < arr.length; i++) {
+    let count = 0;
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i] === arr[j]) count++;
+    }
+    if (count > max) {
+      max = count;
+      javob = arr[i];
+    }
+  }
+
+  return javob;
+}
+
+console.log(majorityElement([1, 3, 3, 4, 5, 4, 3, 4])); 
+
+
 /** Project Standarts
    - Logging standarts
    - Naming Standarts
