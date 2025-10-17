@@ -9,6 +9,12 @@
    
  **/
 
+/** 
+ Traditional API
+ Rest API
+ GraphQL API 
+**/
+
 
 // console.log("TASK H2");
 // function ajratuvchiNatsist (str: string): string {
