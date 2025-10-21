@@ -20,9 +20,7 @@ app.set("view engine", "ejs");
 
 /** 4-Routers **/
 // BSSR: EJS framework
-app.use("/admin", routerAdmin);  // Middleware Pt // SPA: REACT
+app.use("/admin", routerAdmin);  // SSR
 app.use("/", router);  // Middleware Pt // SPA: REACT
-
-
 
 export default app;

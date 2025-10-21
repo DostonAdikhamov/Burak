@@ -10,12 +10,12 @@ export enum HttpCode {
 }
 
 export enum Message {
-        SOMETHING_WENTWRONG = "Something went wrong",
+        SOMETHING_WENT_WRONG = "Something went wrong",
         NO_DATA_FOUND = "No data found",
         CEATE_FAILED = "Create is failed!",
         UPDATE_FAILED = "Update is failed!",
 
-        USED_NICK_FOUND = "You are inserting already used nick or phone!",
+        USED_NICK_PHONE = "You are inserting already used nick or phone!",
         NO_MEMBER_NICK = "No memebr with that nick!",
         WRONG_PASSWROD = "Wrong password, please try again!"
 
@@ -24,6 +24,11 @@ export enum Message {
 class Errors extends Error {
     public code: HttpCode;
     public message: Message;
+
+    static standard = {
+        code: HttpCode.INTERNAL_SERVER_ERROR,
+        message: Message.SOMETHING_WENT_WRONG
+    };
 
     constructor(statusCode: HttpCode, statusMessage: Message) {
         super();
