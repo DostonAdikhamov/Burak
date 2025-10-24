@@ -4,3 +4,7 @@ GraphQL API
 
 Traditional FD => BSSR = > EJS
 Modern FD => SPA => REACT
+
+Cookilarni Xususiyatlari
+1. request join
+2. self destroy
