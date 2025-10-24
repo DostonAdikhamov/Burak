@@ -1,12 +1,29 @@
-console.log("TASK J");
-function findLongestWord(str: string): string {
-  const words: string[] = str.split(" ");
-  return words.reduce((longest: string, current: string): string => {
-    return current.length > longest.length ? current : longest;
-  }, "");
-}
+console.log("TASK K");
+function unlilar(str: string): number {
+  const vowels: string = "aeiouAEIOU";
+  let count: number = 0;
 
-console.log(findLongestWord("Qani nima qilyapsilar?"));
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      count++;
+    }
+  }
+
+  return count;
+}
+console.log(unlilar("Education"));  
+console.log(unlilar("Uzbekistan")); 
+
+
+// console.log("TASK J");
+// function findLongestWord(str: string): string {
+//   const words: string[] = str.split(" ");
+//   return words.reduce((longest: string, current: string): string => {
+//     return current.length > longest.length ? current : longest;
+//   }, "");
+// }
+
+// console.log(findLongestWord("Qani nima qilyapsilar?"));
 
 // console.log("Task I");
 // function majorityElement(arr: number[]): number {
