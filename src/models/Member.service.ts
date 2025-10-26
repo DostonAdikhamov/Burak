@@ -74,6 +74,8 @@ class MemberService {
     public async processSignup(input: MemberInput): Promise<Member> {
   const exist = await this.memberModel.findOne({ memberType: MemberType.RESTAURANT }).exec();
   if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
+  const salt = await bcrypt.genSalt();
+    input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
 
   try {
     const result = await this.memberModel.create(input);
@@ -109,7 +111,7 @@ class MemberService {
         if (!member) {
             throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
         }
-        return result?.toObject() as Member;
+        return result;
       
     }
 }

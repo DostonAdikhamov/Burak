@@ -1,3 +1,12 @@
+Project Standards: 
+- Logging Standards
+- Naming Standards
+    function, method, variable => CAMEL
+    class => PASCAL
+    folder, file => KEBAB
+    css => SNAKE
+- Error handling
+
 Traditional API
 Rest API
 GraphQL API
@@ -8,3 +17,8 @@ Modern FD => SPA => REACT
 Cookilarni Xususiyatlari
 1. request join
 2. self destroy
+
+Validations: 
+Frondtend validation
+Backend validation
+Database validation
