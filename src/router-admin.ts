@@ -14,7 +14,7 @@ routerAdmin
 routerAdmin
   .get("/signup", restaurantController.getSignup)
   .post("/signup",
-  makeUploader("members").single("memberImage"),
+  makeUploader("members").array("memberImages", 5),
   restaurantController.processSignup)
 
 routerAdmin.get("logout", restaurantController.logout);

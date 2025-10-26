@@ -1,5 +1,5 @@
 import MemberModel from "../schema/Member.model";
-import { Member, MemberInput, LoginInput } from "../libs/types/member";
+import { LoginInput, Member, MemberInput } from "../libs/types/member";
 import Errors, { HttpCode, Message} from "../libs/Errors";
 import { MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
@@ -19,7 +19,7 @@ class MemberService {
         try {
             const result = await this.memberModel.create(input);
             result.memberPassword = "";
-            return result.toJSON() as Member;
+            return result.toJSON();
         } catch(err) {
             console.error('Error, model: signup', err);
             throw new Errors(HttpCode.BAD_REQUEST, Message.USED_NICK_PHONE);
@@ -44,43 +44,27 @@ class MemberService {
         );
             
         if(!isMatch) {
-            throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWROD);
+            throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
         }
-    const foundMember = await this.memberModel.findById(member._id).lean().exec();
-    if (!foundMember) {
-        throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
-    }
-    return foundMember as unknown as Member;
+    return await this.memberModel.findById(member._id)
+    .lean().exec();
     }
 
     /** SSR **/
 
-    // public async processSignup(input: MemberInput): Promise<Member> {
-    //     const exist = await this.memberModel
-    //     .findOne({memberType: MemberType.RESTAURANT})
-    //     .exec();
-    //     if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
-
-    //     try {
-    //         const result = await this.memberModel.create(input);
-    //         result.memberPassword = "";
-    //         const member = result.toObject() as Member;
-    //         return member;
-    //     } catch(err) {
-    //         throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
-    //     }
-    // }
-
     public async processSignup(input: MemberInput): Promise<Member> {
-  const exist = await this.memberModel.findOne({ memberType: MemberType.RESTAURANT }).exec();
-  if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
+        const exist = await this.memberModel
+  .findOne({ MemberType: MemberType.RESTAURANT })
+  .exec();
+  if(exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
+
   const salt = await bcrypt.genSalt();
     input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
 
   try {
     const result = await this.memberModel.create(input);
     result.memberPassword = "";
-    return result.toObject() as Member;
+    return result;
   } catch (err) {
     throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
   }
@@ -103,17 +87,28 @@ class MemberService {
         );
             
         if(!isMatch) {
-            throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWROD);
+            throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
         }
-        const result = await this.memberModel
-        .findById(member._id)
-        .exec();
-        if (!member) {
-            throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
-        }
-        return result;
+    
+        return await this.memberModel.findById(member._id).exec();
       
     }
 }
 
 export default MemberService;
+
+ // public async processSignup(input: MemberInput): Promise<Member> {
+    //     const exist = await this.memberModel
+    //     .findOne({memberType: MemberType.RESTAURANT})
+    //     .exec();
+    //     if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
+
+    //     try {
+    //         const result = await this.memberModel.create(input);
+    //         result.memberPassword = "";
+    //         const member = result.toObject() as Member;
+    //         return member;
+    //     } catch(err) {
+    //         throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
+    //     }
+    // }

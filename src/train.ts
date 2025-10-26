@@ -1,18 +1,30 @@
-console.log("TASK K");
-function unlilar(str: string): number {
-  const vowels: string = "aeiouAEIOU";
-  let count: number = 0;
-
-  for (let i = 0; i < str.length; i++) {
-    if (vowels.includes(str[i])) {
-      count++;
-    }
-  }
-
-  return count;
+console.log("TASK L");
+function reverseSentence(str: string): string {
+  return str
+    .split(" ") 
+    .map(word => word.split("").reverse().join("")) 
+    .join(" "); 
 }
-console.log(unlilar("Education"));  
-console.log(unlilar("Uzbekistan")); 
+
+console.log(reverseSentence("eW ekil !gnidoc"));
+console.log(reverseSentence("elaQ ?isaka !imitbaqhs'O"));
+
+
+// console.log("TASK K");
+// function unlilar(str: string): number {
+//   const vowels: string = "aeiouAEIOU";
+//   let count: number = 0;
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (vowels.includes(str[i])) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+// console.log(unlilar("Education"));  
+// console.log(unlilar("Uzbekistan")); 
 
 
 // console.log("TASK J");
