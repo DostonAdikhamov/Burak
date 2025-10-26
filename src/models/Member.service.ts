@@ -55,23 +55,34 @@ class MemberService {
 
     /** SSR **/
 
+    // public async processSignup(input: MemberInput): Promise<Member> {
+    //     const exist = await this.memberModel
+    //     .findOne({memberType: MemberType.RESTAURANT})
+    //     .exec();
+    //     if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
+
+    //     try {
+    //         const result = await this.memberModel.create(input);
+    //         result.memberPassword = "";
+    //         const member = result.toObject() as Member;
+    //         return member;
+    //     } catch(err) {
+    //         throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
+    //     }
+    // }
+
     public async processSignup(input: MemberInput): Promise<Member> {
-        const exist = await this.memberModel
-        .findOne({memberType: MemberType.RESTAURANT})
-        .exec();
-        if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
+  const exist = await this.memberModel.findOne({ memberType: MemberType.RESTAURANT }).exec();
+  if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
 
-
-
-        try {
-            const result = await this.memberModel.create(input);
-            result.memberPassword = "";
-            const member = result.toObject() as Member;
-            return member;
-        } catch(err) {
-            throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
-        }
-    }
+  try {
+    const result = await this.memberModel.create(input);
+    result.memberPassword = "";
+    return result.toObject() as Member;
+  } catch (err) {
+    throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
+  }
+}
 
     public async processLogin(input: LoginInput): Promise<Member> {
         const member = await this.memberModel
