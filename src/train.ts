@@ -1,13 +1,25 @@
-console.log("TASK L");
-function reverseSentence(str: string): string {
-  return str
-    .split(" ") 
-    .map(word => word.split("").reverse().join("")) 
-    .join(" "); 
+console.log("TASK-M");
+function kvadrat(numbers: number[]): { raqam: number, kvadrati: number }[] {
+    return numbers.map(num => ({
+       raqam: num,
+        kvadrati: num * num
+    }));
 }
 
-console.log(reverseSentence("eW ekil !gnidoc"));
-console.log(reverseSentence("elaQ ?isaka !imitbaqhs'O"));
+console.log(kvadrat([9, 25, 13]));
+
+
+
+// console.log("TASK L");
+// function reverseSentence(str: string): string {
+//   return str
+//     .split(" ") 
+//     .map(word => word.split("").reverse().join("")) 
+//     .join(" "); 
+// }
+
+// console.log(reverseSentence("eW ekil !gnidoc"));
+// console.log(reverseSentence("elaQ ?isaka !imitbaqhs'O"));
 
 
 // console.log("TASK K");
