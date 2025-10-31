@@ -1,14 +1,24 @@
-console.log("TASK-M");
-function kvadrat(numbers: number[]): { raqam: number, kvadrati: number }[] {
-    return numbers.map(num => ({
-       raqam: num,
-        kvadrati: num * num
-    }));
-}
+console.log("TASK - N");
+function palindromTekshiruv(str: string): boolean {
+  const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, ""); 
+  const reversed = cleaned.split("").reverse().join("");
+  return cleaned === reversed;
+};
 
-console.log(kvadrat([9, 25, 13]));
+console.log(palindromTekshiruv("dad")); 
+console.log(palindromTekshiruv("non")); 
+console.log(palindromTekshiruv("Mashina")); 
 
 
+// console.log("TASK-M");
+// function kvadrat(numbers: number[]): { raqam: number, kvadrati: number }[] {
+//     return numbers.map(num => ({
+//        raqam: num,
+//         kvadrati: num * num
+//     }));
+// }
+
+// console.log(kvadrat([9, 25, 13]));
 
 // console.log("TASK L");
 // function reverseSentence(str: string): string {
