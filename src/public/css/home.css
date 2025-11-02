@@ -28,6 +28,9 @@
   color: #efefee;
   font-size: 40px;
   font-family: monospace;
+  border: solid 2px black;
+  border-radius: 10px;
+  background-color: #efefee;
 }
 
 .home-container .animation-frame {
