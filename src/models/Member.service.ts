@@ -58,8 +58,8 @@ class MemberService {
   .findOne({ MemberType: MemberType.RESTAURANT })
   .exec();
   if(exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
-
   const salt = await bcrypt.genSalt();
+
     input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
 
   try {
@@ -68,6 +68,7 @@ class MemberService {
     return result;
   } catch (err) {
     throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
+    
   }
 }
 
