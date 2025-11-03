@@ -19,7 +19,7 @@ routerAdmin
   makeUploader("members").single("memberImage"),
   restaurantController.processSignup)
 
-routerAdmin.get("logout", restaurantController.logout);
+routerAdmin.get("/logout", restaurantController.logout);
 
 routerAdmin
   .get("/check-me", restaurantController.checkAuthSession);
