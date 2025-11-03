@@ -1,13 +1,26 @@
-console.log("TASK - N");
-function palindromTekshiruv(str: string): boolean {
-  const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, ""); 
-  const reversed = cleaned.split("").reverse().join("");
-  return cleaned === reversed;
-};
+console.log("TASK - O");
+function harQandayYigindi(arr: any[]): number {
+  let sum = 0;
 
-console.log(palindromTekshiruv("dad")); 
-console.log(palindromTekshiruv("non")); 
-console.log(palindromTekshiruv("Mashina")); 
+  for (const item of arr) {
+    if (typeof item === "number") {
+      sum += item;
+    }
+  }
+  return sum;
+}
+console.log(harQandayYigindi([12, "15", { son: 10 }, true, 35]));
+
+// console.log("TASK - N");
+// function palindromTekshiruv(str: string): boolean {
+//   const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, ""); 
+//   const reversed = cleaned.split("").reverse().join("");
+//   return cleaned === reversed;
+// };
+
+// console.log(palindromTekshiruv("dad")); 
+// console.log(palindromTekshiruv("non")); 
+// console.log(palindromTekshiruv("Mashina")); 
 
 
 // console.log("TASK-M");
