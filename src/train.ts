@@ -1,15 +1,22 @@
-console.log("TASK - O");
-function harQandayYigindi(arr: any[]): number {
-  let sum = 0;
-
-  for (const item of arr) {
-    if (typeof item === "number") {
-      sum += item;
-    }
-  }
-  return sum;
+console.log("TASK - P");
+function objectToArray(obj: Record<string, any>): [string, any][] {
+  return Object.entries(obj);
 }
-console.log(harQandayYigindi([12, "15", { son: 10 }, true, 35]));
+
+console.log(objectToArray({ a: 10, b: 20 }));
+
+// console.log("TASK - O");
+// function harQandayYigindi(arr: any[]): number {
+//   let sum = 0;
+
+//   for (const item of arr) {
+//     if (typeof item === "number") {
+//       sum += item;
+//     }
+//   }
+//   return sum;
+// }
+// console.log(harQandayYigindi([12, "15", { son: 10 }, true, 35]));
 
 // console.log("TASK - N");
 // function palindromTekshiruv(str: string): boolean {
