@@ -30,7 +30,7 @@ productController.createNewProduct = async (req: AdminRequest, res: Response) =>
     console.log("createNewProduct");
 
     if(!req.files?.length) throw new Errors(HttpCode.INTERNAL_SERVER_ERROR, Message
-      .CEATE_FAILED
+      .CREATE_FAILED
     );
 
     const data: ProductInput = req.body;
@@ -40,7 +40,7 @@ productController.createNewProduct = async (req: AdminRequest, res: Response) =>
 
     await productService.createNewProduct(data);
     // console.log("data:", data);
-    res.send(`<script> alert ("Successfully created!"); window.location.replace("admin/product/all") </script>`);
+    res.send(`<script> alert ("Successfully created!"); window.location.replace("/admin/product/all") </script>`);
   } catch (err) {
     console.log("Error, createNewProduct", err);
     const message = err instanceof Error ? err.message : Message.SOMETHING_WENT_WRONG;

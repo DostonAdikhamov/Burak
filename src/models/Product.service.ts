@@ -27,7 +27,7 @@ class ProductService {
         }    
         catch (err) {
             console.error("Error, model:createNewProduct:", err)
-        throw new Errors(HttpCode.BAD_REQUEST, Message.CEATE_FAILED);
+        throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
         }
     }
 
