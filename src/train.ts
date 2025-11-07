@@ -1,9 +1,16 @@
-console.log("TASK - P");
-function objectToArray(obj: Record<string, any>): [string, any][] {
-  return Object.entries(obj);
+function hasProperty(obj: Record<string, any>, key: string): boolean {
+  return obj.hasOwnProperty(key);
 }
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); 
+console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));  
 
-console.log(objectToArray({ a: 10, b: 20 }));
+
+// console.log("TASK - P");
+// function objectToArray(obj: Record<string, any>): [string, any][] {
+//   return Object.entries(obj);
+// }
+
+// console.log(objectToArray({ a: 10, b: 20 }));
 
 // console.log("TASK - O");
 // function harQandayYigindi(arr: any[]): number {
