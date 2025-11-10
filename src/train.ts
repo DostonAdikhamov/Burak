@@ -1,9 +1,16 @@
-function hasProperty(obj: Record<string, any>, key: string): boolean {
-  return obj.hasOwnProperty(key);
+console.log("TASK - R");
+function hisobla(str: string): number {
+  const [a, b] = str.split("+").map(Number);
+  return a + b;
 }
-console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); 
-console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));  
+console.log(hisobla("17+3"));  
+console.log(hisobla("15+25")); 
 
+// function hasProperty(obj: Record<string, any>, key: string): boolean {
+//   return obj.hasOwnProperty(key);
+// }
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); 
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));  
 
 // console.log("TASK - P");
 // function objectToArray(obj: Record<string, any>): [string, any][] {
