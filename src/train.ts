@@ -1,10 +1,21 @@
-console.log("TASK - R");
-function hisobla(str: string): number {
-  const [a, b] = str.split("+").map(Number);
-  return a + b;
+console.log("TASK - S");
+function missingNumber(arr: number[]): number {
+  const n = arr.length;
+  const yigindi = (n * (n + 1)) / 2;  
+  const umumiy = arr.reduce((sum, num) => sum + num, 0);
+  return yigindi - umumiy;
 }
-console.log(hisobla("17+3"));  
-console.log(hisobla("15+25")); 
+console.log(missingNumber([3, 0, 1])); 
+console.log(missingNumber([0, 1]));   
+console.log(missingNumber([9,6,4,2,3,5,7,0,1])); 
+
+// console.log("TASK - R");
+// function hisobla(str: string): number {
+//   const [a, b] = str.split("+").map(Number);
+//   return a + b;
+// }
+// console.log(hisobla("17+3"));  
+// console.log(hisobla("15+25")); 
 
 // function hasProperty(obj: Record<string, any>, key: string): boolean {
 //   return obj.hasOwnProperty(key);
