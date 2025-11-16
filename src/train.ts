@@ -1,13 +1,20 @@
-console.log("TASK - S");
-function missingNumber(arr: number[]): number {
-  const n = arr.length;
-  const yigindi = (n * (n + 1)) / 2;  
-  const umumiy = arr.reduce((sum, num) => sum + num, 0);
-  return yigindi - umumiy;
+console.log("TASK - T")
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  const merged = [...arr1, ...arr2];     
+  return merged.sort((a, b) => a - b);   
 }
-console.log(missingNumber([3, 0, 1])); 
-console.log(missingNumber([0, 1]));   
-console.log(missingNumber([9,6,4,2,3,5,7,0,1])); 
+console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+
+// console.log("TASK - S");
+// function missingNumber(arr: number[]): number {
+//   const n = arr.length;
+//   const yigindi = (n * (n + 1)) / 2;  
+//   const umumiy = arr.reduce((sum, num) => sum + num, 0);
+//   return yigindi - umumiy;
+// }
+// console.log(missingNumber([3, 0, 1])); 
+// console.log(missingNumber([0, 1]));   
+// console.log(missingNumber([9,6,4,2,3,5,7,0,1])); 
 
 // console.log("TASK - R");
 // function hisobla(str: string): number {
