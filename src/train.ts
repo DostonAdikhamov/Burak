@@ -1,9 +1,21 @@
-console.log("TASK - T")
-function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
-  const merged = [...arr1, ...arr2];     
-  return merged.sort((a, b) => a - b);   
+console.log("TASK-U");
+function toqSon(num: number): number {
+  let count = 0;
+  for (let i = 1; i <= num; i++) {
+    if (i % 2 !== 0) count++;
+  }
+  return count;
 }
-console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+console.log(toqSon(10));   
+console.log(toqSon(25));  
+
+
+// console.log("TASK - T")
+// function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+//   const merged = [...arr1, ...arr2];     
+//   return merged.sort((a, b) => a - b);   
+// }
+// console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
 
 // console.log("TASK - S");
 // function missingNumber(arr: number[]): number {
