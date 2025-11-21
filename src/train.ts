@@ -1,14 +1,27 @@
-console.log("TASK-U");
-function toqSon(num: number): number {
-  let count = 0;
-  for (let i = 1; i <= num; i++) {
-    if (i % 2 !== 0) count++;
+console.log("TASK - U");
+function countChars(str: string): Record<string, number> {
+  const result: Record<string, number> = {};
+  for (const char of str) {
+    if (result[char]) {
+      result[char]++;
+    } else {
+      result[char] = 1;
+    }
   }
-  return count;
+  return result;
 }
-console.log(toqSon(10));   
-console.log(toqSon(25));  
+console.log(countChars("Assalomu aleykum!"));
 
+// console.log("TASK-U");
+// function toqSon(num: number): number {
+//   let count = 0;
+//   for (let i = 1; i <= num; i++) {
+//     if (i % 2 !== 0) count++;
+//   }
+//   return count;
+// }
+// console.log(toqSon(10));   
+// console.log(toqSon(25));  
 
 // console.log("TASK - T")
 // function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
