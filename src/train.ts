@@ -1,16 +1,18 @@
-console.log("TASK - U");
-function countChars(str: string): Record<string, number> {
-  const result: Record<string, number> = {};
-  for (const char of str) {
-    if (result[char]) {
-      result[char]++;
-    } else {
-      result[char] = 1;
-    }
-  }
-  return result;
-}
-console.log(countChars("Assalomu aleykum!"));
+console.log("TASK - W");
+
+// console.log("TASK - V");
+// function countChars(str: string): Record<string, number> {
+//   const result: Record<string, number> = {};
+//   for (const char of str) {
+//     if (result[char]) {
+//       result[char]++;
+//     } else {
+//       result[char] = 1;
+//     }
+//   }
+//   return result;
+// }
+// console.log(countChars("Assalomu aleykum!"));
 
 // console.log("TASK-U");
 // function toqSon(num: number): number {
