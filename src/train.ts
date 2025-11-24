@@ -1,4 +1,15 @@
 console.log("TASK - W");
+function chunkArray(arr: any[], size: number): any[][] {
+  const natija: any[][] = [];
+  for (let i = 0; i < arr.length; i += size) {
+    natija.push(arr.slice(i, i + size));
+  }
+  return natija;
+}
+
+console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 2));
+console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 3));
+console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 4));
 
 // console.log("TASK - V");
 // function countChars(str: string): Record<string, number> {
