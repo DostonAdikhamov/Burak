@@ -1,15 +1,32 @@
-console.log("TASK - W");
-function chunkArray(arr: any[], size: number): any[][] {
-  const natija: any[][] = [];
-  for (let i = 0; i < arr.length; i += size) {
-    natija.push(arr.slice(i, i + size));
+console.log("TASK - X")
+function countOccurrences(obj: Record<string, any>, key: string): number {
+  let count = 0;
+  for (const prop in obj) {
+    if (prop === key) count++;
+    const value = obj[prop];
+    if (typeof value === "object" && value !== null) {
+      count += countOccurrences(value, key); // rekursiv chaqiriq
+    }
   }
-  return natija;
+  return count;
 }
+console.log(countOccurrences(
+  { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
+  "model"
+));
 
-console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 2));
-console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 3));
-console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 4));
+// console.log("TASK - W");
+// function chunkArray(arr: any[], size: number): any[][] {
+//   const natija: any[][] = [];
+//   for (let i = 0; i < arr.length; i += size) {
+//     natija.push(arr.slice(i, i + size));
+//   }
+//   return natija;
+// }
+
+// console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 2));
+// console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 3));
+// console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 4));
 
 // console.log("TASK - V");
 // function countChars(str: string): Record<string, number> {
