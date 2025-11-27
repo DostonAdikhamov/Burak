@@ -1,19 +1,25 @@
-console.log("TASK - X")
-function countOccurrences(obj: Record<string, any>, key: string): number {
-  let count = 0;
-  for (const prop in obj) {
-    if (prop === key) count++;
-    const value = obj[prop];
-    if (typeof value === "object" && value !== null) {
-      count += countOccurrences(value, key); // rekursiv chaqiriq
-    }
-  }
-  return count;
+console.log("TASK - Y");
+function findIntersection(arr1: any[], arr2: any[]): any[] {
+  return arr1.filter(item => arr2.includes(item));
 }
-console.log(countOccurrences(
-  { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
-  "model"
-));
+console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+
+// console.log("TASK - X")
+// function countOccurrences(obj: Record<string, any>, key: string): number {
+//   let count = 0;
+//   for (const prop in obj) {
+//     if (prop === key) count++;
+//     const value = obj[prop];
+//     if (typeof value === "object" && value !== null) {
+//       count += countOccurrences(value, key); // rekursiv chaqiriq
+//     }
+//   }
+//   return count;
+// }
+// console.log(countOccurrences(
+//   { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
+//   "model"
+// ));
 
 // console.log("TASK - W");
 // function chunkArray(arr: any[], size: number): any[][] {
