@@ -27,7 +27,7 @@ class ProductService {
 
     public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
         const match: T = { productStatus: ProductStatus.PROCESS };
-
+        console.log("inquiry:", inquiry);
         if(inquiry.productCollection) 
             match.productCollection = inquiry.productCollection;
         if(inquiry.search) {
