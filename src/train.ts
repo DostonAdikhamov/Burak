@@ -1,8 +1,17 @@
-console.log("TASK - Y");
-function findIntersection(arr1: any[], arr2: any[]): any[] {
-  return arr1.filter(item => arr2.includes(item));
+console.log("TASK - Z");
+function sumEvens(arr: number[]): number {
+  return arr
+    .filter(num => num % 2 === 0) 
+    .reduce((sum, num) => sum + num, 0); 
 }
-console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+console.log(sumEvens([1, 2, 3]));      
+console.log(sumEvens([1, 2, 3, 4, 6])); 
+
+// console.log("TASK - Y");
+// function findIntersection(arr1: any[], arr2: any[]): any[] {
+//   return arr1.filter(item => arr2.includes(item));
+// }
+// console.log(findIntersection([1, 2, 3], [3, 2, 0]));
 
 // console.log("TASK - X")
 // function countOccurrences(obj: Record<string, any>, key: string): number {
