@@ -1,11 +1,17 @@
-console.log("TASK - Z");
-function sumEvens(arr: number[]): number {
-  return arr
-    .filter(num => num % 2 === 0) 
-    .reduce((sum, num) => sum + num, 0); 
+console.log("Task - Z");
+function sortByAge(arr: { age: number }[]): { age: number }[] {
+  return arr.sort((a, b) => a.age - b.age);
 }
-console.log(sumEvens([1, 2, 3]));      
-console.log(sumEvens([1, 2, 3, 4, 6])); 
+console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
+
+// console.log("TASK - Z");
+// function sumEvens(arr: number[]): number {
+//   return arr
+//     .filter(num => num % 2 === 0) 
+//     .reduce((sum, num) => sum + num, 0); 
+// }
+// console.log(sumEvens([1, 2, 3]));      
+// console.log(sumEvens([1, 2, 3, 4, 6])); 
 
 // console.log("TASK - Y");
 // function findIntersection(arr1: any[], arr2: any[]): any[] {
