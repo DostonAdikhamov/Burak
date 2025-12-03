@@ -1,4 +1,4 @@
-console.log("Task - Z");
+console.log("Task - ZA");
 function sortByAge(arr: { age: number }[]): { age: number }[] {
   return arr.sort((a, b) => a.age - b.age);
 }
