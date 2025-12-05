@@ -1,8 +1,17 @@
-console.log("Task - ZA");
-function sortByAge(arr: { age: number }[]): { age: number }[] {
-  return arr.sort((a, b) => a.age - b.age);
+console.log("TASK - ZC");
+function celsiusToFahrenheit(celsius: number): number {
+  return (celsius * 9) / 5 + 32;
 }
-console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
+
+console.log(celsiusToFahrenheit(0));   
+console.log(celsiusToFahrenheit(10));  
+console.log(celsiusToFahrenheit(100)); 
+
+// console.log("Task - ZA");
+// function sortByAge(arr: { age: number }[]): { age: number }[] {
+//   return arr.sort((a, b) => a.age - b.age);
+// }
+// console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
 
 // console.log("TASK - Z");
 // function sumEvens(arr: number[]): number {

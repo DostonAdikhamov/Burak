@@ -19,6 +19,14 @@ export interface Product {
     productView: number;
 }
 
+export interface ProductInquiry{
+    order: string;
+    page: number;
+    limit: number;
+    productCollection?: ProductCollection;
+    search?: string; 
+}
+
 export interface ProductInput {
     productStatus?: ProductStatus;
     productCollection: ProductCollection;
@@ -30,14 +38,6 @@ export interface ProductInput {
     productDesc?: string;
     productImages?: string[];
     productView: number;
-}
-
-export interface ProductInquiry{
-    order: string;
-    page: number;
-    limit: number;
-    productCollection?: ProductCollection;
-    search?: string; 
 }
 
 export interface ProductUpdateInput {
