@@ -1,11 +1,25 @@
-console.log("TASK - ZC");
-function celsiusToFahrenheit(celsius: number): number {
-  return (celsius * 9) / 5 + 32;
-}
+console.log("TASK - ZD");
+function changeNumberInArray(index: number, arr: number[], newValue: number): number[] {
+  if (index < 0 || index >= arr.length) {
+    throw new Error("Index out of range");
+  }
 
-console.log(celsiusToFahrenheit(0));   
-console.log(celsiusToFahrenheit(10));  
-console.log(celsiusToFahrenheit(100)); 
+  const updatedArr = [...arr]; 
+  updatedArr[index] = newValue;
+  return updatedArr;
+}
+console.log(changeNumberInArray(1, [1, 3, 7, 2], 5));
+console.log(changeNumberInArray(2, [10, 20, 30, 40], 99)); 
+
+
+// console.log("TASK - ZC");
+// function celsiusToFahrenheit(celsius: number): number {
+//   return (celsius * 9) / 5 + 32;
+// }
+
+// console.log(celsiusToFahrenheit(0));   
+// console.log(celsiusToFahrenheit(10));  
+// console.log(celsiusToFahrenheit(100)); 
 
 // console.log("Task - ZA");
 // function sortByAge(arr: { age: number }[]): { age: number }[] {
