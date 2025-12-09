@@ -1,16 +1,31 @@
-console.log("TASK - ZD");
-function changeNumberInArray(index: number, arr: number[], newValue: number): number[] {
-  if (index < 0 || index >= arr.length) {
-    throw new Error("Index out of range");
+console.log("TASK - ZE");
+function removeDuplicate(str: string): string {
+  let result = "";
+  for (const char of str) {
+    if (!result.includes(char)) {
+      result += char;
+    }
   }
-
-  const updatedArr = [...arr]; 
-  updatedArr[index] = newValue;
-  return updatedArr;
+  return result;
 }
-console.log(changeNumberInArray(1, [1, 3, 7, 2], 5));
-console.log(changeNumberInArray(2, [10, 20, 30, 40], 99)); 
 
+console.log(removeDuplicate("stringg"));  
+console.log(removeDuplicate("aabbcc"));   
+console.log(removeDuplicate("Assalomu aleykum"));    
+console.log(removeDuplicate("hello"));    
+
+// console.log("TASK - ZD");
+// function changeNumberInArray(index: number, arr: number[], newValue: number): number[] {
+//   if (index < 0 || index >= arr.length) {
+//     throw new Error("Index out of range");
+//   }
+
+//   const updatedArr = [...arr]; 
+//   updatedArr[index] = newValue;
+//   return updatedArr;
+// }
+// console.log(changeNumberInArray(1, [1, 3, 7, 2], 5));
+// console.log(changeNumberInArray(2, [10, 20, 30, 40], 99)); 
 
 // console.log("TASK - ZC");
 // function celsiusToFahrenheit(celsius: number): number {
