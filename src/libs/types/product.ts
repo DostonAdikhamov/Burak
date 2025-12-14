@@ -9,7 +9,7 @@ export interface Product {
     _id: ObjectId;
     productStatus: ProductStatus;
     productCollection: ProductCollection;
-    productName: String;
+    productName: string;
     productPrice: number;
     productLeftCount: number;
     productSize: ProductSize;
@@ -32,7 +32,7 @@ export interface ProductInquiry{
 export interface ProductInput {
     productStatus?: ProductStatus;
     productCollection: ProductCollection;
-    productName: String;
+    productName: string;
     productPrice: number;
     productLeftCount: number;
     productSize?: ProductSize;

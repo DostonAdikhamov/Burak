@@ -1,18 +1,33 @@
-console.log("TASK - ZE");
-function removeDuplicate(str: string): string {
-  let result = "";
-  for (const char of str) {
-    if (!result.includes(char)) {
-      result += char;
-    }
-  }
-  return result;
+console.log("TASK - ZF");
+function capitalizeWords(str: string): string {
+  return str
+    .split(" ")
+    .map(word => {
+      if (word.length <= 2) {
+        return word; 
+      }
+      return word[0].toUpperCase() + word.slice(1);
+    })
+    .join(" ");
 }
+console.log(capitalizeWords("name should be a string"));
+console.log(capitalizeWords("endi qanday bo'lyapti a?"));
 
-console.log(removeDuplicate("stringg"));  
-console.log(removeDuplicate("aabbcc"));   
-console.log(removeDuplicate("Assalomu aleykum"));    
-console.log(removeDuplicate("hello"));    
+// console.log("TASK - ZE");
+// function removeDuplicate(str: string): string {
+//   let result = "";
+//   for (const char of str) {
+//     if (!result.includes(char)) {
+//       result += char;
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(removeDuplicate("stringg"));  
+// console.log(removeDuplicate("aabbcc"));   
+// console.log(removeDuplicate("Assalomu aleykum"));    
+// console.log(removeDuplicate("hello"));    
 
 // console.log("TASK - ZD");
 // function changeNumberInArray(index: number, arr: number[], newValue: number): number[] {
