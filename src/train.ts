@@ -1,17 +1,30 @@
-console.log("TASK - ZF");
-function capitalizeWords(str: string): string {
+console.log("TASK ZG");
+function toSnakeCase(str: string): string {
   return str
-    .split(" ")
-    .map(word => {
-      if (word.length <= 2) {
-        return word; 
-      }
-      return word[0].toUpperCase() + word.slice(1);
-    })
-    .join(" ");
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    .join("_");
 }
-console.log(capitalizeWords("name should be a string"));
-console.log(capitalizeWords("endi qanday bo'lyapti a?"));
+
+console.log(toSnakeCase("name should be a string"));
+
+
+
+// console.log("TASK - ZF");
+// function capitalizeWords(str: string): string {
+//   return str
+//     .split(" ")
+//     .map(word => {
+//       if (word.length <= 2) {
+//         return word; 
+//       }
+//       return word[0].toUpperCase() + word.slice(1);
+//     })
+//     .join(" ");
+// }
+// console.log(capitalizeWords("name should be a string"));
+// console.log(capitalizeWords("endi qanday bo'lyapti a?"));
 
 // console.log("TASK - ZE");
 // function removeDuplicate(str: string): string {

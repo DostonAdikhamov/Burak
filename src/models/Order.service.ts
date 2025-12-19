@@ -98,7 +98,7 @@ const delivery = amount < 100 ? 5 : 0;
     return result;
    }
 
-   public async updatOrder(
+   public async updateOrder(
     member: Member,
     input: OrderUpdateInput
    ): Promise<Order> {
@@ -115,13 +115,14 @@ const delivery = amount < 100 ? 5 : 0;
         { new: true }
      )
      .exec();
+     console.log("input data:", input)
+console.log("dbResult:", result);
 
      if(!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
      if(orderStatus === OrderStatus.PROCESS) {
         await this.memberService.addUserPoint(member, 1);
      }
-
      return result;
    }
 
