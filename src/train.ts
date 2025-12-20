@@ -1,15 +1,30 @@
-console.log("TASK ZG");
-function toSnakeCase(str: string): string {
-  return str
-    .trim()
-    .toLowerCase()
-    .split(/\s+/)
-    .join("_");
+console.log("TASK - ZH");
+function findDisappearedNumbers(arr: number[]): number[] {
+  const result: number[] = [];
+  const max = Math.max(...arr);
+  const set = new Set(arr);
+
+  for (let i = 1; i <= max; i++) {
+    if (!set.has(i)) {
+      result.push(i);
+    }
+  }
+
+  return result;
 }
 
-console.log(toSnakeCase("name should be a string"));
+console.log(findDisappearedNumbers([1, 3, 4, 7, 25]));
 
+// console.log("TASK ZG");
+// function toSnakeCase(str: string): string {
+//   return str
+//     .trim()
+//     .toLowerCase()
+//     .split(/\s+/)
+//     .join("_");
+// }
 
+// console.log(toSnakeCase("name should be a string"));
 
 // console.log("TASK - ZF");
 // function capitalizeWords(str: string): string {
