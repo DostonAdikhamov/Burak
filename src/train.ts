@@ -1,10 +1,25 @@
-console.log("TASK - ZI");
-function delayHelloWorld(text: string): void {
-  setTimeout((): void => {
-    console.log(text);
-  }, 3000);
+console.log("TASK - ZJ");
+function reduceNestedArray(arr: any[]): number {
+  let sum = 0;
+
+  for (const item of arr) {
+    if (Array.isArray(item)) {
+      sum += reduceNestedArray(item);
+    } else if (typeof item === "number") {
+      sum += item; 
+    }
+  }
+  return sum;
 }
-delayHelloWorld("Hello World!");
+console.log(reduceNestedArray([1, [1, 3, [7]]])); 
+
+// console.log("TASK - ZI");
+// function delayHelloWorld(text: string): void {
+//   setTimeout((): void => {
+//     console.log(text);
+//   }, 3000);
+// }
+// delayHelloWorld("Hello World!");
 
 // console.log("TASK - ZH");
 // function findDisappearedNumbers(arr: number[]): number[] {
