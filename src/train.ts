@@ -1,17 +1,31 @@
-console.log("TASK - ZJ");
-function reduceNestedArray(arr: any[]): number {
-  let sum = 0;
-
-  for (const item of arr) {
-    if (Array.isArray(item)) {
-      sum += reduceNestedArray(item);
-    } else if (typeof item === "number") {
-      sum += item; 
+console.log("TASK - ZK");
+function printNumbers() {
+  let seconds = 0;
+  
+  const interval = setInterval(() => {
+    seconds++;
+    console.log(seconds);
+    
+    if (seconds === 5) {
+      clearInterval(interval);
     }
-  }
-  return sum;
+  }, 1000);
 }
-console.log(reduceNestedArray([1, [1, 3, [7]]])); 
+printNumbers();
+
+// console.log("TASK - ZJ");
+// function reduceNestedArray(arr: any[]): number {
+//   let sum = 0;
+//   for (const item of arr) {
+//     if (Array.isArray(item)) {
+//       sum += reduceNestedArray(item);
+//     } else if (typeof item === "number") {
+//       sum += item; 
+//     }
+//   }
+//   return sum;
+// }
+// console.log(reduceNestedArray([1, [1, 3, [7]]])); 
 
 // console.log("TASK - ZI");
 // function delayHelloWorld(text: string): void {
