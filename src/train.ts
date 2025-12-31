@@ -1,17 +1,27 @@
-console.log("TASK - ZK");
-function printNumbers() {
-  let seconds = 0;
-  
-  const interval = setInterval(() => {
-    seconds++;
-    console.log(seconds);
-    
-    if (seconds === 5) {
-      clearInterval(interval);
-    }
-  }, 1000);
+console.log("TASK - ZL");
+function stringToKebab(str: string): string {
+  return str
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    .join("-");
 }
-printNumbers();
+console.log(stringToKebab("I love Kebab"));
+
+// console.log("TASK - ZK");
+// function printNumbers() {
+//   let seconds = 0;
+  
+//   const interval = setInterval(() => {
+//     seconds++;
+//     console.log(seconds);
+    
+//     if (seconds === 5) {
+//       clearInterval(interval);
+//     }
+//   }, 1000);
+// }
+// printNumbers();
 
 // console.log("TASK - ZJ");
 // function reduceNestedArray(arr: any[]): number {
