@@ -1,12 +1,25 @@
-console.log("TASK - ZL");
-function stringToKebab(str: string): string {
-  return str
-    .trim()
-    .toLowerCase()
-    .split(/\s+/)
-    .join("-");
+console.log("TASK - ZM");
+function squareDigits(num: number): string {
+  return num
+    .toString()
+    .split("")
+    .map(digit => {
+      const n = Number(digit);
+      return (n * n).toString();
+    })
+    .join("");
 }
-console.log(stringToKebab("I love Kebab"));
+console.log(squareDigits(8111));
+
+// console.log("TASK - ZL");
+// function stringToKebab(str: string): string {
+//   return str
+//     .trim()
+//     .toLowerCase()
+//     .split(/\s+/)
+//     .join("-");
+// }
+// console.log(stringToKebab("I love Kebab"));
 
 // console.log("TASK - ZK");
 // function printNumbers() {
