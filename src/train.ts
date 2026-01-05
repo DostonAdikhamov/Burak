@@ -1,15 +1,24 @@
-console.log("TASK - ZM");
-function squareDigits(num: number): string {
-  return num
-    .toString()
-    .split("")
-    .map(digit => {
-      const n = Number(digit);
-      return (n * n).toString();
-    })
-    .join("");
+console.log("TASK - ZN");
+function rotateArray(arr: number[], index: number): number[] {
+  const n = arr.length;
+  const k = index % n; 
+  return arr.slice(n - k).concat(arr.slice(0, n - k));
 }
-console.log(squareDigits(8111));
+
+console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+
+// console.log("TASK - ZM");
+// function squareDigits(num: number): string {
+//   return num
+//     .toString()
+//     .split("")
+//     .map(digit => {
+//       const n = Number(digit);
+//       return (n * n).toString();
+//     })
+//     .join("");
+// }
+// console.log(squareDigits(8111));
 
 // console.log("TASK - ZL");
 // function stringToKebab(str: string): string {
