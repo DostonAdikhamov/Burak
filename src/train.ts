@@ -1,11 +1,29 @@
-console.log("TASK - ZN");
-function rotateArray(arr: number[], index: number): number[] {
-  const n = arr.length;
-  const k = index % n; 
-  return arr.slice(n - k).concat(arr.slice(0, n - k));
+console.log("TASK - ZO");
+function areParenthesesBalanced(str: string): boolean {
+  let balance = 0;
+
+  for (const char of str) {
+    if (char === "(") balance++;
+    if (char === ")") balance--;
+
+    if (balance < 0) return false;
+  }
+
+  return balance === 0;
 }
 
-console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); 
+console.log(areParenthesesBalanced("(abc(def)")); 
+console.log(areParenthesesBalanced("abc)def(")); 
+
+// console.log("TASK - ZN");
+// function rotateArray(arr: number[], index: number): number[] {
+//   const n = arr.length;
+//   const k = index % n; 
+//   return arr.slice(n - k).concat(arr.slice(0, n - k));
+// }
+
+// console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
 
 // console.log("TASK - ZM");
 // function squareDigits(num: number): string {
