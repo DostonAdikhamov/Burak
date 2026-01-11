@@ -1,20 +1,36 @@
-console.log("TASK - ZO");
-function areParenthesesBalanced(str: string): boolean {
-  let balance = 0;
+console.log("TASK - ZP");
+function countNumberAndLetters(str: string): { number: number; letter: number } {
+  let number = 0;
+  let letter = 0;
 
   for (const char of str) {
-    if (char === "(") balance++;
-    if (char === ")") balance--;
-
-    if (balance < 0) return false;
+    if (/[0-9]/.test(char)) {
+      number++;
+    } else if (/[a-zA-Z]/.test(char)) {
+      letter++;
+    }
   }
-
-  return balance === 0;
+  return { number, letter };
 }
+console.log(countNumberAndLetters("string152%\\¥"));
 
-console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); 
-console.log(areParenthesesBalanced("(abc(def)")); 
-console.log(areParenthesesBalanced("abc)def(")); 
+// console.log("TASK - ZO");
+// function areParenthesesBalanced(str: string): boolean {
+//   let balance = 0;
+
+//   for (const char of str) {
+//     if (char === "(") balance++;
+//     if (char === ")") balance--;
+
+//     if (balance < 0) return false;
+//   }
+
+//   return balance === 0;
+// }
+
+// console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); 
+// console.log(areParenthesesBalanced("(abc(def)")); 
+// console.log(areParenthesesBalanced("abc)def(")); 
 
 // console.log("TASK - ZN");
 // function rotateArray(arr: number[], index: number): number[] {
