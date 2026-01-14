@@ -1,18 +1,37 @@
-console.log("TASK - ZP");
-function countNumberAndLetters(str: string): { number: number; letter: number } {
-  let number = 0;
-  let letter = 0;
+console.log("TASK - ZQ");
+function findDuplicates(arr: number[]): number[] {
+  const countMap: Record<number, number> = {};
+  const result: number[] = [];
 
-  for (const char of str) {
-    if (/[0-9]/.test(char)) {
-      number++;
-    } else if (/[a-zA-Z]/.test(char)) {
-      letter++;
+  for (const num of arr) {
+    countMap[num] = (countMap[num] || 0) + 1;
+  }
+
+  for (const key in countMap) {
+    if (countMap[key] >= 2) {
+      result.push(Number(key));
     }
   }
-  return { number, letter };
+  return result;
 }
-console.log(countNumberAndLetters("string152%\\¥"));
+
+console.log(findDuplicates([1, 2, 3, 4, 5, 2, 3, 5]));
+
+// console.log("TASK - ZP");
+// function countNumberAndLetters(str: string): { number: number; letter: number } {
+//   let number = 0;
+//   let letter = 0;
+
+//   for (const char of str) {
+//     if (/[0-9]/.test(char)) {
+//       number++;
+//     } else if (/[a-zA-Z]/.test(char)) {
+//       letter++;
+//     }
+//   }
+//   return { number, letter };
+// }
+// console.log(countNumberAndLetters("string152%\\¥"));
 
 // console.log("TASK - ZO");
 // function areParenthesesBalanced(str: string): boolean {
