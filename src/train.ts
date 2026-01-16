@@ -1,21 +1,37 @@
-console.log("TASK - ZQ");
-function findDuplicates(arr: number[]): number[] {
-  const countMap: Record<number, number> = {};
-  const result: number[] = [];
-
-  for (const num of arr) {
-    countMap[num] = (countMap[num] || 0) + 1;
-  }
-
-  for (const key in countMap) {
-    if (countMap[key] >= 2) {
-      result.push(Number(key));
+console.log("TASK - ZR");
+function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+  if (arr1.length !== arr2.length) return false;
+  const sorted1 = [...arr1].sort((a, b) => a - b);
+  const sorted2 = [...arr2].sort((a, b) => a - b);
+  for (let i = 0; i < sorted1.length; i++) {
+    if (sorted1[i] !== sorted2[i]) {
+      return false;
     }
   }
-  return result;
+  return true;
 }
 
-console.log(findDuplicates([1, 2, 3, 4, 5, 2, 3, 5]));
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2])); 
+console.log(areArraysEqual([1, 2, 3], [1, 2, 4])); 
+
+// console.log("TASK - ZQ");
+// function findDuplicates(arr: number[]): number[] {
+//   const countMap: Record<number, number> = {};
+//   const result: number[] = [];
+
+//   for (const num of arr) {
+//     countMap[num] = (countMap[num] || 0) + 1;
+//   }
+
+//   for (const key in countMap) {
+//     if (countMap[key] >= 2) {
+//       result.push(Number(key));
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(findDuplicates([1, 2, 3, 4, 5, 2, 3, 5]));
 
 // console.log("TASK - ZP");
 // function countNumberAndLetters(str: string): { number: number; letter: number } {
