@@ -1,18 +1,37 @@
-console.log("TASK - ZR");
-function areArraysEqual(arr1: number[], arr2: number[]): boolean {
-  if (arr1.length !== arr2.length) return false;
-  const sorted1 = [...arr1].sort((a, b) => a - b);
-  const sorted2 = [...arr2].sort((a, b) => a - b);
-  for (let i = 0; i < sorted1.length; i++) {
-    if (sorted1[i] !== sorted2[i]) {
-      return false;
+console.log("TASK - ZS");
+function singleNumber(arr: number[]): number {
+  const count: Record<number, number> = {};
+
+  for (const num of arr) {
+    count[num] = (count[num] || 0) + 1;
+  }
+
+  for (const key in count) {
+    if (count[key] === 1) {
+      return Number(key);
     }
   }
-  return true;
+
+  throw new Error("Single element not found");
 }
 
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2])); 
-console.log(areArraysEqual([1, 2, 3], [1, 2, 4])); 
+console.log(singleNumber([4, 2, 1, 2, 1]));
+
+// console.log("TASK - ZR");
+// function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+//   if (arr1.length !== arr2.length) return false;
+//   const sorted1 = [...arr1].sort((a, b) => a - b);
+//   const sorted2 = [...arr2].sort((a, b) => a - b);
+//   for (let i = 0; i < sorted1.length; i++) {
+//     if (sorted1[i] !== sorted2[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2])); 
+// console.log(areArraysEqual([1, 2, 3], [1, 2, 4])); 
 
 // console.log("TASK - ZQ");
 // function findDuplicates(arr: number[]): number[] {
