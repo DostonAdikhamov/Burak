@@ -1,6 +1,7 @@
-console.log("TASK - ZS");
-function singleNumber(arr: number[]): number {
+console.log("TASK - ZU");
+function sumOfUnique(arr: number[]): number {
   const count: Record<number, number> = {};
+  let sum = 0;
 
   for (const num of arr) {
     count[num] = (count[num] || 0) + 1;
@@ -8,14 +9,31 @@ function singleNumber(arr: number[]): number {
 
   for (const key in count) {
     if (count[key] === 1) {
-      return Number(key);
+      sum += Number(key);
     }
   }
-
-  throw new Error("Single element not found");
+  return sum;
 }
+console.log(sumOfUnique([1, 2, 3, 2])); // 4
 
-console.log(singleNumber([4, 2, 1, 2, 1]));
+// console.log("TASK - ZS");
+// function singleNumber(arr: number[]): number {
+//   const count: Record<number, number> = {};
+
+//   for (const num of arr) {
+//     count[num] = (count[num] || 0) + 1;
+//   }
+
+//   for (const key in count) {
+//     if (count[key] === 1) {
+//       return Number(key);
+//     }
+//   }
+
+//   throw new Error("Single element not found");
+// }
+
+// console.log(singleNumber([4, 2, 1, 2, 1]));
 
 // console.log("TASK - ZR");
 // function areArraysEqual(arr1: number[], arr2: number[]): boolean {
